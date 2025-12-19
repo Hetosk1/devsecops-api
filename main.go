@@ -9,7 +9,7 @@ import (
 func main() {
 	r := chi.NewRouter()
 
-	r.Get("/", func(w http.ResponseWrite, r *http.Request){
+	r.Get("/", func(w http.ResponseWriter, r *http.Request){
 		w.Write([]byte("API is running"))
 	})
 

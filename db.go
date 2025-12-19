@@ -4,12 +4,13 @@ import (
 	"database/sql"
 	"log"
 	"os"
-	"github.com/jackc/pgx/v5/stdlib"
+
+	_ "github.com/jackc/pgx/v5/stdlib"
 )
 
-var DB *sql.DB 
+var DB *sql.DB
 
-func ConnectDB(){
+func ConnectDB() {
 	dsn := os.Getenv("DATABASE_URL")
 
 	if dsn == "" {

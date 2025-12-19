@@ -1,23 +1,13 @@
-package main 
+package main
 
 import (
 	"log"
 	"net/http"
-	"github.com/go-chi/chi/v5"
 )
 
 func main() {
-	r := chi.NewRouter()
-
-	r.Get("/", func(w http.ResponseWriter, r *http.Request){
-		w.Write([]byte("API is running"))
-	})
+	r := SetupRoutes()
 
 	log.Println("Server Running on http://localhost:8080")
-	err := http.ListenAndServe(":8080", r)
-
-	if err != nil {
-		log.Fatal(err)
-	}
-
+	log.Fatal(http.ListenAndServe(":8080", r))
 }

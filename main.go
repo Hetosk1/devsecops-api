@@ -6,6 +6,9 @@ import (
 )
 
 func main() {
+
+	ConnectDB()
+
 	r := SetupRoutes()
 
 	log.Println("Server Running on http://localhost:8080")
